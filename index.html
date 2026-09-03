@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxora Pharma — Intermediates, Specialty Chemicals &amp; Quality</title>
+<meta name="description" content="Taxora Pharma manufactures pharmaceutical intermediates, mineral salts, hypophosphite salts and industrial chemicals with ISO and FSSAI-backed quality systems.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --navy-900:#0b1d42;
+    --navy-800:#132a5e;
+    --navy-700:#1c3a7a;
+    --green-600:#1f8a4c;
+    --green-500:#2ea55f;
+    --mint-100:#e8f5ec;
+    --paper:#f6f8f7;
+    --paper-2:#eef2f0;
+    --ink:#101826;
+    --ink-soft:#4a5568;
+    --line:#dde3e0;
+    --white:#ffffff;
+
+    --font-display:'Source Serif 4', Georgia, serif;
+    --font-body:'IBM Plex Sans', -apple-system, sans-serif;
+    --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+    --container:1180px;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  section{position:relative;}
+  .wrap{max-width:var(--container); margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--green-600);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--green-600);
+    display:inline-block;
+  }
+  h1,h2,h3{font-family:var(--font-display); font-weight:600; color:var(--navy-900); letter-spacing:-.01em;}
+  h2{font-size:clamp(1.7rem,3vw,2.4rem); margin-bottom:8px;}
+  .section-sub{color:var(--ink-soft); font-size:1.02rem; max-width:560px; margin-bottom:44px;}
+  .section-pad{padding:96px 0;}
+  @media(max-width:720px){.section-pad{padding:64px 0;}}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--font-body); font-weight:600; font-size:.94rem;
+    padding:14px 26px; border-radius:999px; border:1px solid transparent;
+    cursor:pointer; transition:.2s ease; white-space:nowrap;
+  }
+  .btn-primary{background:var(--green-600); color:#fff;}
+  .btn-primary:hover{background:var(--green-500); transform:translateY(-1px);}
+  .btn-outline{border-color:rgba(255,255,255,.5); color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .btn-navy{background:var(--navy-800); color:#fff;}
+  .btn-navy:hover{background:var(--navy-700);}
+  .btn-ghost{border-color:var(--line); color:var(--navy-900);}
+  .btn-ghost:hover{border-color:var(--green-600); color:var(--green-600);}
+
+  /* ============ NAV ============ */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:rgba(246,248,247,0);
+    backdrop-filter:blur(0px);
+    transition:background .3s ease, backdrop-filter .3s ease, box-shadow .3s ease;
+  }
+  header.site-nav.scrolled{
+    background:rgba(246,248,247,.92);
+    backdrop-filter:blur(10px);
+    box-shadow:0 1px 0 var(--line);
+  }
+  .nav-inner{
+    max-width:var(--container); margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:42px; width:42px; object-fit:contain; border-radius:8px;}
+  .brand-name{font-family:var(--font-display); font-weight:600; font-size:1.15rem; color:var(--navy-900);}
+  header.site-nav:not(.scrolled) .brand-name,
+  header.site-nav:not(.scrolled) .nav-links > a{color:#fff;}
+  .brand-tag{font-family:var(--font-mono); font-size:.52rem; letter-spacing:.075em; color:var(--green-500); text-transform:uppercase; display:block; max-width:330px; line-height:1.35;}
+
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{font-size:.92rem; font-weight:500; color:var(--navy-900); position:relative; padding:4px 0;}
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0%;
+    background:var(--green-500); transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav-cta .btn{padding:10px 20px; font-size:.85rem;}
+  header.site-nav.scrolled .btn-outline{border-color:var(--navy-800); color:var(--navy-900);}
+  header.site-nav.scrolled .btn-outline:hover{background:var(--navy-800); color:#fff;}
+
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; z-index:1001;}
+  .hamburger span{width:24px; height:2px; background:currentColor; display:block;}
+  header.site-nav:not(.scrolled) .hamburger{color:#fff;}
+  header.site-nav.scrolled .hamburger{color:var(--navy-900);}
+
+  /* ============ MEGA MENU ============ */
+  .nav-item{position:relative;}
+  .nav-link-trigger{
+    display:flex; align-items:center; gap:6px; background:none; border:none; cursor:pointer;
+    font-family:var(--font-body); font-size:.92rem; font-weight:500; color:var(--navy-900);
+    padding:4px 0; position:relative;
+  }
+  header.site-nav:not(.scrolled) .nav-link-trigger{color:#fff;}
+  .nav-link-trigger::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0%;
+    background:var(--green-500); transition:width .25s ease;
+  }
+  .nav-item.mega-open .nav-link-trigger::after{width:100%;}
+  .nav-link-trigger .caret{font-size:.7rem; transition:transform .25s ease; display:inline-block;}
+  .nav-item.mega-open .nav-link-trigger .caret{transform:rotate(180deg);}
+
+  .mega-menu{
+    position:fixed; left:50%; top:78px; transform:translateX(-50%) translateY(-10px);
+    width:min(760px, calc(100vw - 48px));
+    background:var(--white); border-radius:16px; box-shadow:0 30px 70px rgba(11,29,66,.22);
+    border:1px solid var(--line);
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s;
+    z-index:1200; overflow:hidden;
+  }
+  .nav-item.mega-open .mega-menu{
+    opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
+  }
+  .mega-inner{display:grid; grid-template-columns:1.5fr 1fr;}
+  .mega-col-main{padding:28px 8px 28px 28px;}
+  .mega-col-side{padding:28px 28px 28px 8px; border-left:1px solid var(--line); display:flex; flex-direction:column;}
+  .mega-label{
+    font-family:var(--font-mono); font-size:.65rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--green-600); display:block; margin-bottom:16px;
+  }
+  .mega-grid{display:grid; grid-template-columns:1fr 1fr; gap:6px;}
+  .mega-item{
+    display:flex; align-items:flex-start; gap:12px; padding:12px; border-radius:10px;
+    text-align:left; transition:background .18s ease;
+    background:none; border:none; appearance:none; -webkit-appearance:none; width:100%;
+    cursor:pointer; font-family:var(--font-body);
+  }
+  .mega-item:hover, .mega-item:focus-visible{background:var(--mint-100);}
+  .mega-item-icon{
+    width:36px; height:36px; border-radius:9px; background:var(--navy-900); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0;
+  }
+  .mega-item:hover .mega-item-icon{background:var(--green-600);}
+  .mega-item-text h5{font-family:var(--font-body); font-size:.88rem; font-weight:600; color:var(--navy-900); margin-bottom:2px;}
+  .mega-item-text p{font-size:.76rem; color:var(--ink-soft); line-height:1.4;}
+  .mega-item-count{
+    font-family:var(--font-mono); font-size:.62rem; color:var(--green-600); display:block; margin-top:4px;
+  }
+
+  .mega-links{display:flex; flex-direction:column; gap:2px; margin-bottom:20px;}
+  .mega-links a{
+    display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:8px;
+    font-size:.85rem; font-weight:500; color:var(--navy-900); transition:background .18s ease;
+  }
+  .mega-links a:hover{background:var(--paper-2); color:var(--green-600);}
+  .mega-links a .dot{width:5px; height:5px; border-radius:50%; background:var(--green-500); flex-shrink:0;}
+
+  .mega-promo{
+    margin-top:auto; background:linear-gradient(150deg, var(--navy-900), var(--navy-800));
+    border-radius:12px; padding:18px; color:#fff;
+  }
+  .mega-promo-eyebrow{
+    font-family:var(--font-mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--green-500); display:block; margin-bottom:6px;
+  }
+  .mega-promo h4{color:#fff; font-size:1rem; margin-bottom:6px;}
+  .mega-promo p{font-size:.76rem; color:rgba(255,255,255,.65); margin-bottom:14px; line-height:1.4;}
+  .mega-promo-btn{width:100%; justify-content:center; padding:9px 16px; font-size:.78rem;}
+
+  @media(max-width:900px){
+    .nav-links, .nav-cta .btn-ghost{display:none;}
+    .hamburger{display:flex;}
+    .nav-links.open{
+      display:flex; position:fixed; top:0; right:0; bottom:0; left:auto; width:78%; max-width:320px;
+      background:var(--navy-900); flex-direction:column; align-items:stretch; padding:100px 36px 36px; gap:6px;
+      box-shadow:-10px 0 40px rgba(0,0,0,.25); overflow-y:auto; height:100vh; z-index:1050;
+    }
+    .nav-links.open a{color:#fff; font-size:1.05rem; padding:10px 0; width:100%;}
+    .nav-links.open .nav-item{width:100%;}
+    .nav-links.open .nav-link-trigger{color:#fff; font-size:1.05rem; width:100%; justify-content:space-between; padding:10px 0;}
+    .nav-links.open .mega-menu{
+      position:static; transform:none; width:100%; box-shadow:none; border:none;
+      border-radius:10px; background:rgba(255,255,255,.06); margin:6px 0 12px;
+      max-height:0; opacity:1; visibility:visible; pointer-events:auto; overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .nav-links.open .nav-item.mega-open .mega-menu{max-height:900px;}
+    .nav-links.open .mega-inner{grid-template-columns:1fr;}
+    .nav-links.open .mega-grid{grid-template-columns:1fr;}
+    .nav-links.open .mega-col-main, .nav-links.open .mega-col-side{padding:18px;}
+    .nav-links.open .mega-col-side{border-left:none; border-top:1px solid rgba(255,255,255,.12);}
+    .nav-links.open .mega-label{color:rgba(255,255,255,.5);}
+    .nav-links.open .mega-item-text h5{color:#fff;}
+    .nav-links.open .mega-item-text p{color:rgba(255,255,255,.55);}
+    .nav-links.open .mega-links a{color:#fff;}
+    .nav-links.open .mega-links a:hover{background:rgba(255,255,255,.08);}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    min-height:100vh;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(46,165,95,.25), transparent 60%),
+      linear-gradient(150deg, var(--navy-900) 0%, var(--navy-800) 55%, #0e2a52 100%);
+    color:#fff;
+    display:flex; align-items:center;
+    padding:140px 0 90px;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:var(--container); margin:0 auto; padding:0 32px;
+    display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center; position:relative; z-index:2;
+  }
+  .hero h1{
+    color:#fff; font-size:clamp(2.5rem,5vw,4rem); line-height:1.05; letter-spacing:-.02em;
+    margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic; color:var(--green-500);}
+  .hero p.lede{font-size:1.15rem; color:rgba(255,255,255,.78); max-width:480px; margin-bottom:38px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px;}
+  .hero-stats{display:flex; gap:40px; flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid rgba(255,255,255,.2); padding-left:16px;}
+  .hero-stats .num{font-family:var(--font-display); font-size:1.9rem; font-weight:600; color:#fff; display:block;}
+  .hero-stats .lbl{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.55);}
+
+  /* molecule diagram signature element */
+  .molecule-wrap{position:relative; height:460px;}
+  .molecule-wrap svg{width:100%; height:100%; overflow:visible;}
+  .molecule-wrap .node{fill:var(--green-500); filter:drop-shadow(0 0 8px rgba(46,165,95,.55));}
+  .molecule-wrap .node.alt{fill:#fff;}
+  .molecule-wrap .bond{stroke:rgba(255,255,255,.35); stroke-width:1.4;}
+  .molecule-wrap .pulse{animation:pulse 3.4s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.55; transform:scale(1);} 50%{opacity:1; transform:scale(1.12);}}
+  .mol-label{
+    position:absolute; font-family:var(--font-mono); font-size:.68rem; color:rgba(255,255,255,.5);
+    letter-spacing:.08em; text-transform:uppercase;
+  }
+  .mol-label.l1{top:6%; left:2%;}
+  .mol-label.l2{bottom:8%; right:0%;}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr; text-align:left;}
+    .molecule-wrap{height:280px; order:-1;}
+  }
+
+  /* scroll cue */
+  .scroll-cue{
+    position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    color:rgba(255,255,255,.5); font-family:var(--font-mono); font-size:.65rem; letter-spacing:.14em; z-index:2;
+  }
+  .scroll-cue .line{width:1px; height:34px; background:rgba(255,255,255,.35); position:relative; overflow:hidden;}
+  .scroll-cue .line::after{
+    content:""; position:absolute; top:-100%; left:0; width:100%; height:100%; background:var(--green-500);
+    animation:drip 2s ease-in-out infinite;
+  }
+  @keyframes drip{0%{top:-100%;} 60%{top:100%;} 100%{top:100%;}}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ============ QUICK LINKS ============ */
+  .quick{background:var(--white); padding:0;}
+  .quick .wrap{padding:0 32px; margin-top:-70px; position:relative; z-index:5;}
+  .quick-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+    background:var(--white); border-radius:var(--radius); box-shadow:0 20px 60px rgba(11,29,66,.12);
+    padding:10px;
+  }
+  .quick-card{
+    padding:28px 22px; border-radius:10px; transition:.2s ease; cursor:pointer;
+  }
+  .quick-card:hover{background:var(--mint-100);}
+  .quick-card .qi{
+    width:42px; height:42px; border-radius:10px; background:var(--navy-900); color:#fff;
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .quick-card h3{font-size:1.02rem; color:var(--navy-900); margin-bottom:4px;}
+  .quick-card p{font-size:.85rem; color:var(--ink-soft);}
+  @media(max-width:900px){.quick-grid{grid-template-columns:repeat(2,1fr);} .quick .wrap{margin-top:-40px;}}
+  @media(max-width:520px){.quick-grid{grid-template-columns:1fr;}}
+
+
+  /* ============ GLOBAL PRODUCT SEARCH ============ */
+  .catalog-filter{
+    display:flex; align-items:center; gap:16px; margin:-14px 0 28px; position:relative; z-index:4;
+  }
+  .catalog-search-wrap{
+    position:relative; flex:1; max-width:760px;
+  }
+  .catalog-search-icon{
+    position:absolute; left:18px; top:50%; transform:translateY(-52%);
+    font-size:1.2rem; color:var(--green-600); pointer-events:none;
+  }
+  .catalog-search{
+    width:100%; padding:16px 50px 16px 46px; border:1px solid var(--line); border-radius:999px;
+    background:#fff; color:var(--ink); font:500 .9rem var(--font-body);
+    box-shadow:0 12px 30px rgba(11,29,66,.07); transition:.2s ease;
+  }
+  .catalog-search:focus{
+    outline:none; border-color:var(--green-500); box-shadow:0 14px 36px rgba(31,138,76,.13);
+  }
+  .catalog-clear{
+    position:absolute; right:12px; top:50%; transform:translateY(-50%);
+    width:32px; height:32px; border:0; border-radius:50%; background:var(--paper-2);
+    color:var(--ink-soft); cursor:pointer; font-size:1.2rem; line-height:1;
+    opacity:0; pointer-events:none; transition:.2s ease;
+  }
+  .catalog-search-wrap.has-value .catalog-clear{opacity:1; pointer-events:auto;}
+  .catalog-clear:hover{background:var(--mint-100); color:var(--green-600);}
+  .catalog-match{
+    font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--ink-soft); white-space:nowrap;
+  }
+  .acc-item.search-hit{
+    border-color:rgba(46,165,95,.55);
+    box-shadow:0 10px 28px rgba(31,138,76,.08);
+  }
+  .child-card.search-primary{
+    order:-1;
+    border-color:var(--green-500);
+    background:#fff;
+    box-shadow:0 8px 24px rgba(31,138,76,.10);
+  }
+  .child-card.search-primary::before{
+    content:"Top match";
+    align-self:flex-start; font:600 .58rem var(--font-mono);
+    letter-spacing:.08em; text-transform:uppercase; color:var(--green-600);
+    background:var(--mint-100); padding:3px 7px; border-radius:999px;
+  }
+  .global-search-empty{
+    display:none; padding:18px 20px; margin-top:12px; border:1px dashed var(--line);
+    border-radius:12px; color:var(--ink-soft); font-size:.9rem; background:var(--paper);
+  }
+  @media(max-width:700px){
+    .catalog-filter{align-items:stretch; flex-direction:column; gap:9px; margin-top:-4px;}
+    .catalog-search-wrap{max-width:none;}
+    .catalog-match{padding-left:6px;}
+  }
+
+  /* ============ HERO LAB / MOLECULAR ANIMATION ============ */
+  .hero-specialty{
+    color:var(--green-500);
+    font-style:normal;
+    position:relative;
+    display:inline-block;
+    transition:color .2s ease;
+  }
+  .hero-specialty:hover{color:#69d78f;}
+  .hero-eyebrow{animation:heroEyebrowIn .8s ease both;}
+  @keyframes heroEyebrowIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .molecule-wrap{
+    position:relative; height:500px; isolation:isolate;
+  }
+  .molecule-wrap::before{
+    content:""; position:absolute; inset:7% 0 8% 8%;
+    background:radial-gradient(circle at 50% 48%, rgba(46,165,95,.16), transparent 38%);
+    filter:blur(2px); animation:heroGlow 5s ease-in-out infinite;
+    z-index:-1;
+  }
+  @keyframes heroGlow{0%,100%{opacity:.55;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+  .hero-lab{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+  .hero-lab .lab-glass{
+    fill:rgba(255,255,255,.025); stroke:rgba(255,255,255,.22); stroke-width:1.2;
+    filter:drop-shadow(0 0 12px rgba(255,255,255,.04));
+  }
+  .hero-lab .liquid{fill:rgba(46,165,95,.18); stroke:rgba(46,165,95,.42); stroke-width:1;}
+  .hero-lab .bubble{fill:#fff; opacity:.72; animation:floatBubble 4s ease-in-out infinite;}
+  .hero-lab .bubble.b2{animation-delay:-1.4s}.hero-lab .bubble.b3{animation-delay:-2.7s}
+  @keyframes floatBubble{0%,100%{transform:translateY(8px);opacity:.35}50%{transform:translateY(-10px);opacity:.9}}
+  .hero-leaf{
+    position:absolute; right:-2%; bottom:2%; width:54%; max-width:390px;
+    opacity:.88; transform-origin:75% 85%; animation:leafBreathe 5s ease-in-out infinite;
+    filter:drop-shadow(0 16px 28px rgba(0,0,0,.18));
+  }
+  @keyframes leafBreathe{0%,100%{transform:rotate(-2deg) scale(.98)}50%{transform:rotate(2deg) scale(1.015)}}
+  .hero-dna{
+    position:absolute; right:4%; top:4%; width:31%; height:45%; opacity:.28;
+    animation:dnaFloat 7s ease-in-out infinite;
+  }
+  @keyframes dnaFloat{0%,100%{transform:translateY(5px) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+  .hero-dna path{fill:none; stroke:rgba(255,255,255,.8); stroke-width:1.2}
+  .hero-dna circle{fill:var(--green-500); opacity:.65}
+  .hero-molecule{
+    position:absolute; left:1%; bottom:8%; width:43%; max-width:300px;
+    animation:moleculeFloat 6s ease-in-out infinite;
+  }
+  @keyframes moleculeFloat{0%,100%{transform:translate3d(0,5px,0) rotate(-2deg)}50%{transform:translate3d(4px,-8px,0) rotate(2deg)}}
+  .hero-molecule line{stroke:rgba(255,255,255,.34); stroke-width:2}
+  .hero-molecule .atom{filter:drop-shadow(0 0 7px rgba(46,165,95,.55)); animation:atomPulse 3s ease-in-out infinite;}
+  .hero-molecule .atom.blue{fill:#7cc9ff}.hero-molecule .atom.green{fill:var(--green-500)}
+  .hero-molecule .atom.white{fill:#fff}
+  .hero-molecule .atom.a2{animation-delay:-1s}.hero-molecule .atom.a3{animation-delay:-2s}
+  @keyframes atomPulse{0%,100%{opacity:.75;transform:scale(.98)}50%{opacity:1;transform:scale(1.08)}}
+  .hero-orbit{
+    position:absolute; left:18%; top:13%; width:66%; height:62%; border:1px solid rgba(255,255,255,.12);
+    border-radius:50%; transform:rotate(-17deg); animation:orbitSpin 18s linear infinite;
+  }
+  .hero-orbit::after{
+    content:""; position:absolute; width:9px; height:9px; border-radius:50%;
+    background:var(--green-500); top:3%; left:12%; box-shadow:0 0 18px rgba(46,165,95,.8);
+  }
+  @keyframes orbitSpin{to{transform:rotate(343deg)}}
+  .mol-label{z-index:4}
+  @media(max-width:900px){
+    .molecule-wrap{height:330px; order:-1;}
+    .hero-leaf{right:2%;width:48%}.hero-molecule{width:38%;bottom:4%}.hero-dna{width:25%}
+  }
+  @media(max-width:560px){
+    .molecule-wrap{height:290px;}
+    .hero h1{font-size:clamp(2.35rem,11vw,3.2rem);}
+    .hero-leaf{width:52%}.hero-molecule{width:43%}.hero-dna{width:27%}
+  }
+
+  /* ============ PRODUCTS — ACCORDION ============ */
+  .accordion{display:flex; flex-direction:column; gap:16px;}
+  .acc-item{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  .acc-item.open{border-color:var(--green-500); box-shadow:0 16px 40px rgba(31,138,76,.12);}
+  .acc-header{
+    width:100%; display:flex; align-items:center; gap:20px;
+    padding:26px 28px; background:none; border:none; cursor:pointer; text-align:left;
+    font-family:var(--font-body);
+  }
+  .acc-icon{
+    width:52px; height:52px; border-radius:12px; background:var(--navy-900); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+    transition:background .25s ease;
+  }
+  .acc-item.open .acc-icon{background:var(--green-600);}
+  .acc-title-block{flex:1; min-width:0;}
+  .acc-cat{
+    font-family:var(--font-mono); font-size:.65rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--green-600); display:block; margin-bottom:4px;
+  }
+  .acc-header h3{font-size:1.15rem; color:var(--navy-900); margin-bottom:4px;}
+  .acc-header .acc-desc{font-size:.86rem; color:var(--ink-soft); max-width:520px;}
+  .acc-meta{display:flex; align-items:center; gap:18px; flex-shrink:0;}
+  .acc-count{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.04em; color:var(--ink-soft);
+    background:var(--paper-2); padding:6px 12px; border-radius:999px; white-space:nowrap;
+  }
+  .acc-item.open .acc-count{background:var(--mint-100); color:var(--green-600);}
+  .acc-chevron{
+    width:30px; height:30px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--navy-900);
+    font-size:.85rem; transition:transform .3s ease, border-color .25s ease;
+  }
+  .acc-item.open .acc-chevron{transform:rotate(180deg); border-color:var(--green-500); color:var(--green-600);}
+
+  .acc-panel{display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s ease;}
+  .acc-item.open .acc-panel{grid-template-rows:1fr;}
+  .acc-panel-inner{overflow:hidden; min-height:0;}
+  .acc-panel-body{padding:0 28px 30px; border-top:1px dashed var(--line);}
+
+  .acc-toolbar{
+    display:flex; align-items:center; gap:14px; padding:22px 0 20px; flex-wrap:wrap;
+  }
+  .acc-search{
+    flex:1; min-width:220px; padding:11px 16px; border:1px solid var(--line); border-radius:999px;
+    font-family:var(--font-body); font-size:.86rem; background:var(--paper); transition:.2s ease;
+  }
+  .acc-search:focus{outline:none; border-color:var(--green-500); background:#fff;}
+  .acc-match{font-family:var(--font-mono); font-size:.7rem; color:var(--ink-soft); white-space:nowrap;}
+
+  .child-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+    max-height:520px; overflow-y:auto; padding-right:6px; margin-right:-6px;
+  }
+  .child-grid::-webkit-scrollbar{width:6px;}
+  .child-grid::-webkit-scrollbar-thumb{background:var(--line); border-radius:99px;}
+  .child-grid::-webkit-scrollbar-track{background:transparent;}
+
+  .child-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:16px 18px; display:flex; flex-direction:column; gap:10px; transition:.2s ease;
+  }
+  .child-card:hover{border-color:var(--green-500); background:#fff; transform:translateY(-2px);}
+  .child-card-head{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .child-card h4{font-family:var(--font-display); font-weight:600; font-size:.94rem; color:var(--navy-900); line-height:1.3;}
+  .cas-pill{
+    font-family:var(--font-mono); font-size:.66rem; color:var(--navy-800); background:var(--white);
+    border:1px solid var(--line); padding:3px 8px; border-radius:6px; white-space:nowrap; flex-shrink:0;
+  }
+  .tag-row{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag{
+    font-family:var(--font-mono); font-size:.64rem; letter-spacing:.02em; color:var(--green-600);
+    background:var(--mint-100); padding:3px 9px; border-radius:6px;
+  }
+  .salt-row{display:flex; gap:8px; font-size:.78rem; color:var(--ink-soft);}
+  .salt-row .salt-label{
+    font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--navy-800); flex-shrink:0; padding-top:1px;
+  }
+  .wc-badge{
+    align-self:flex-start; font-family:var(--font-mono); font-size:.62rem; letter-spacing:.04em;
+    text-transform:uppercase; padding:4px 9px; border-radius:6px; display:flex; align-items:center; gap:5px;
+  }
+  .wc-badge::before{content:""; width:6px; height:6px; border-radius:50%; display:inline-block;}
+  .wc-badge.wc-available{background:var(--mint-100); color:var(--green-600);}
+  .wc-badge.wc-available::before{background:var(--green-500);}
+  .wc-badge.wc-pending{background:#fdf1e2; color:#a3690f;}
+  .wc-badge.wc-pending::before{background:#e0a53f;}
+  .wc-badge.wc-na{background:var(--paper-2); color:var(--ink-soft);}
+  .wc-badge.wc-na::before{background:#b9c2be;}
+
+  .child-empty{
+    grid-column:1/-1; text-align:center; padding:36px 20px; color:var(--ink-soft); font-size:.9rem;
+  }
+  .acc-empty-state{
+    grid-column:1/-1; display:flex; flex-direction:column; align-items:center; text-align:center;
+    gap:16px; padding:44px 20px; border:1px dashed var(--line); border-radius:12px; background:var(--paper);
+  }
+  .acc-empty-state p{color:var(--ink-soft); font-size:.9rem; max-width:400px;}
+
+  @media(max-width:980px){.child-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:680px){
+    .child-grid{grid-template-columns:1fr; max-height:440px;}
+    .acc-header{padding:20px; gap:14px;}
+    .acc-icon{width:44px; height:44px; font-size:1.1rem;}
+    .acc-meta{gap:10px;}
+    .acc-count{display:none;}
+  }
+
+  /* ============ CERTIFICATIONS — COA styling ============ */
+  .cert-section{background:var(--navy-900); color:#fff;}
+  .cert-section .eyebrow{color:var(--green-500);}
+  .cert-section h2{color:#fff;}
+  .cert-section .section-sub{color:rgba(255,255,255,.62);}
+  .coa{
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .coa-head{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+    padding:20px 26px; border-bottom:1px dashed rgba(255,255,255,.18);
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.55); text-transform:uppercase;
+  }
+  .coa-rows{display:grid; grid-template-columns:repeat(4,1fr);}
+  .coa-row{
+    padding:26px; border-right:1px dashed rgba(255,255,255,.14); border-bottom:1px dashed rgba(255,255,255,.14);
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .coa-row:nth-child(4n){border-right:none;}
+  .coa-badge{
+    width:44px; height:44px; border-radius:50%; border:2px solid var(--green-500);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:.68rem; font-weight:600; color:var(--green-500);
+  }
+  .coa-row h4{font-size:.95rem; font-weight:600; color:#fff;}
+  .coa-row .status{font-family:var(--font-mono); font-size:.7rem; color:var(--green-500); display:flex; align-items:center; gap:6px;}
+  .coa-row .status::before{content:"✓"; font-weight:700;}
+  .coa-row p{font-size:.8rem; color:rgba(255,255,255,.55);}
+  .coa-foot{padding:22px 26px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  @media(max-width:900px){.coa-rows{grid-template-columns:repeat(2,1fr);} .coa-row:nth-child(2n){border-right:none;}}
+  @media(max-width:560px){.coa-rows{grid-template-columns:1fr;} .coa-row{border-right:none;}}
+
+  /* ============ CLIENTS / NETWORK ============ */
+  .network-wrap{
+    background:var(--paper-2); border-radius:var(--radius); padding:60px 40px; position:relative; overflow:hidden;
+  }
+  .network-svg{width:100%; height:auto; display:block; max-width:900px; margin:0 auto;}
+  .network-svg .hub{fill:var(--navy-800);}
+  .network-svg .node{fill:var(--green-500);}
+  .network-svg .lane{stroke:#b9c7c0; stroke-width:1.2; stroke-dasharray:3 4;}
+  .network-legend{display:flex; flex-wrap:wrap; gap:14px 28px; justify-content:center; margin-top:34px;}
+  .network-legend span{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.04em; color:var(--ink-soft); display:flex; align-items:center; gap:8px;}
+  .network-legend .dot{width:8px; height:8px; border-radius:50%; background:var(--green-500); display:inline-block;}
+
+  /* ============ NEWS ============ */
+  .news-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .news-card{background:var(--white); border-radius:var(--radius); border:1px solid var(--line); overflow:hidden; transition:.25s ease;}
+  .news-card:hover{box-shadow:0 16px 40px rgba(11,29,66,.1); transform:translateY(-4px);}
+  .news-thumb{height:150px; display:flex; align-items:center; justify-content:center; position:relative;}
+  .news-thumb.t1{background:linear-gradient(135deg,#e8f5ec,#cdeada);}
+  .news-thumb.t2{background:linear-gradient(135deg,#e5ecf7,#c9d8f0);}
+  .news-thumb.t3{background:linear-gradient(135deg,#fdf1e2,#f6dfc0);}
+  .news-body{padding:22px 24px 26px;}
+  .news-date{font-family:var(--font-mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--green-600); margin-bottom:8px; display:block;}
+  .news-card h3{font-size:1.02rem; color:var(--navy-900); margin-bottom:8px;}
+  .news-card p{font-size:.86rem; color:var(--ink-soft); margin-bottom:16px;}
+  .news-card a.read{font-size:.83rem; font-weight:600; color:var(--green-600); display:inline-flex; align-items:center; gap:6px;}
+  @media(max-width:900px){.news-grid{grid-template-columns:1fr;}}
+
+  /* ============ CAREERS ============ */
+  .careers{
+    background:linear-gradient(120deg, var(--mint-100), var(--paper) 60%);
+    border-radius:var(--radius);
+    padding:64px 50px;
+    display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;
+  }
+  .careers h2{margin-bottom:16px;}
+  .careers p{color:var(--ink-soft); margin-bottom:28px; max-width:440px;}
+  .career-list{display:flex; flex-direction:column; gap:22px;}
+  .career-item{display:flex; gap:16px; align-items:flex-start;}
+  .career-item .ci{width:38px; height:38px; border-radius:8px; background:var(--navy-900); color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .career-item h4{font-size:.98rem; color:var(--navy-900); margin-bottom:3px;}
+  .career-item p{font-size:.84rem; margin:0;}
+  @media(max-width:820px){.careers{grid-template-columns:1fr; padding:44px 28px;}}
+
+  /* ============ CONTACT ============ */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  .contact-form{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:36px;}
+  .form-row{margin-bottom:18px;}
+  .form-row label{display:block; font-size:.78rem; font-weight:600; color:var(--navy-900); margin-bottom:6px;}
+  .form-row input, .form-row textarea{
+    width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:8px; font-family:var(--font-body);
+    font-size:.92rem; background:var(--paper); transition:.2s ease;
+  }
+  .form-row input:focus, .form-row textarea:focus{outline:none; border-color:var(--green-500); background:#fff;}
+  .form-row textarea{min-height:110px; resize:vertical;}
+  .contact-form button{width:100%; justify-content:center; margin-top:6px;}
+  .form-msg{margin-top:14px; font-size:.85rem; color:var(--green-600); font-weight:600; display:none;}
+  .form-msg.show{display:block;}
+
+  .contact-side{display:flex; flex-direction:column; gap:22px;}
+  .map-block{
+    background:var(--navy-900); border-radius:var(--radius); height:220px; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .map-pin{width:16px; height:16px; border-radius:50% 50% 50% 0; background:var(--green-500); transform:rotate(-45deg); box-shadow:0 0 0 8px rgba(46,165,95,.18);}
+  .contact-info-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+  .info-row{display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid var(--line);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row .ii{width:34px; height:34px; border-radius:8px; background:var(--mint-100); color:var(--green-600); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .info-row .il{font-size:.68rem; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin-bottom:2px;}
+  .info-row .iv{font-size:.92rem; font-weight:600; color:var(--navy-900);}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--navy-900); color:rgba(255,255,255,.7); padding-top:70px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,.1);}
+  .footer-brand .brand{margin-bottom:14px;}
+  .footer-brand p{font-size:.86rem; color:rgba(255,255,255,.5); max-width:280px;}
+  footer h5{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin-bottom:16px;}
+  footer .flinks li{margin-bottom:10px;}
+  footer .flinks a{font-size:.88rem; color:rgba(255,255,255,.75);}
+  footer .flinks a:hover{color:var(--green-500);}
+  .social-row{display:flex; gap:10px; margin-top:6px;}
+  .social-row a{
+    width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.2);
+    display:flex; align-items:center; justify-content:center; transition:.2s ease;
+  }
+  .social-row a:hover{background:var(--green-600); border-color:var(--green-600);}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    padding:26px 0; font-size:.8rem; color:rgba(255,255,255,.45);
+  }
+  @media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr; row-gap:36px;}}
+  @media(max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ============ VISUAL THEME / IMAGE-LED SECTIONS ============ */
+:root{--sky:#edf8ff;--leaf:#dff5e6;--soft-blue:#dcefff;--glow:rgba(84,190,112,.18);}
+.nature-bg{background:
+  radial-gradient(circle at 4% 20%,rgba(120,195,255,.22),transparent 26%),
+  radial-gradient(circle at 96% 25%,rgba(146,220,91,.20),transparent 28%),
+  linear-gradient(135deg,#f7fbff 0%,#ffffff 45%,#f5fff7 100%);
+  overflow:hidden;}
+.nature-bg::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(circle,rgba(46,165,95,.13) 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(to bottom,transparent,#000 15%,#000 85%,transparent);}
+.image-panel{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(17,49,94,.10);box-shadow:0 24px 70px rgba(20,62,104,.13);background:#fff;}
+.image-panel img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
+.image-panel:hover img{transform:scale(1.035);}
+.section-kicker{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green-600);font-weight:600;}
+.news-thumb img{width:100%;height:100%;object-fit:cover;}
+.news-thumb{overflow:hidden;background:#eef7f1!important;}
+.news-thumb img{transition:transform .55s ease;}
+.news-card:hover .news-thumb img{transform:scale(1.05);}
+.network-wrap.image-network{padding:0;background:#fff;border:1px solid rgba(18,52,93,.10);box-shadow:0 24px 70px rgba(20,62,104,.10);}
+.network-map-image{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eff9ff,#f7fff5);}
+.network-map-image img{width:100%;height:420px;object-fit:cover;opacity:.94;mix-blend-mode:multiply;}
+.network-map-overlay{position:absolute;inset:auto 30px 24px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.network-pill{padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid rgba(31,138,76,.15);box-shadow:0 8px 22px rgba(20,62,104,.10);font-size:.75rem;color:var(--navy-900);font-weight:600;backdrop-filter:blur(8px);}
+.careers{position:relative;background:linear-gradient(120deg,#effaff,#ffffff 55%,#effbf2)!important;border:1px solid rgba(18,52,93,.10);box-shadow:0 24px 70px rgba(20,62,104,.10);}
+.careers-visuals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px;}
+.careers-visuals .image-panel{height:175px;border-radius:18px;}
+.careers-visuals .image-panel:first-child{transform:translateY(10px);}
+.careers-visuals .image-panel:last-child{transform:translateY(-10px);}
+.contact-section{background:linear-gradient(135deg,#f7fbff,#ffffff 50%,#f5fff7)!important;}
+.map-block{background:#eaf5ee url('images/contact-map.jpg') center/cover no-repeat!important;height:280px!important;box-shadow:inset 0 0 0 1px rgba(18,52,93,.08);}
+.map-block::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.18));pointer-events:none;}
+.map-pin{position:absolute;z-index:2;width:28px;height:28px;}
+.quick-card{box-shadow:0 10px 30px rgba(20,62,104,.06);}
+@media(max-width:820px){.network-map-image,.network-map-image img{min-height:280px;height:280px}.careers-visuals{order:-1}.careers-visuals .image-panel{height:145px}.map-block{height:230px!important;}}
+
+
+.hero-reference-art{position:absolute;inset:8% 0 0 0;width:100%;height:92%;object-fit:cover;opacity:.13;mix-blend-mode:screen;border-radius:32px;filter:saturate(1.2) blur(.2px);pointer-events:none;}
+.molecule-wrap>*:not(.hero-reference-art){z-index:2;}
+.molecule-wrap{isolation:isolate;}
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <img src="/images/logo.jpeg" alt="Taxora Pharma logo">
+       
+      <span>
+        <span class="brand-name">Taxora Pharma</span>
+        <span class="brand-tag">Inspired by Nature · Driven by Science · Dedicated to Life</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <div class="nav-item has-mega" id="megaTrigger">
+        <button class="nav-link-trigger" id="megaBtn" aria-expanded="false" aria-haspopup="true">
+          Products <span class="caret">⌄</span>
+        </button>
+        <div class="mega-menu" id="megaMenu" role="menu">
+          <div class="mega-inner">
+            <div class="mega-col mega-col-main">
+              <span class="mega-label">Product Families</span>
+              <div class="mega-grid" id="megaProductGrid"></div>
+            </div>
+            <div class="mega-col mega-col-side">
+              <span class="mega-label">Explore</span>
+              <ul class="mega-links" id="megaExploreList"></ul>
+              <div class="mega-promo">
+                <span class="mega-promo-eyebrow">Quality System</span>
+                <h4>ISO &amp; FSSAI Certified</h4>
+                <p>Every batch inspected and certified end to end.</p>
+                <a href="#certifications" class="btn btn-primary mega-promo-btn">View Certifications</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#certifications">Certifications</a>
+      <a href="#news">News</a>
+      <a href="#careers">Careers</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Contact Us</a>
+      <a href="#products" class="btn btn-navy">Explore Products</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow hero-eyebrow" style="color:#7fe0a3;">Since establishment — fine chemicals manufacturing</div>
+      <h1>Innovating <em>intermediates</em>,<br><a class="hero-specialty" href="#home">Specialty Chemicals</a><br>and delivering quality.</h1>
+      <p class="lede">Taxora Pharma manufactures pharmaceutical intermediates, specialty chemicals, mineral salts, hypophosphite salts and industrial chemicals — inspected batch by batch, certified end to end.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="num">4</span><span class="lbl">Product Families</span></div>
+        <div><span class="num">4</span><span class="lbl">ISO Certified</span></div>
+        <div><span class="num">6</span><span class="lbl">Global Regions Served</span></div>
+      </div>
+    </div>
+    <div class="molecule-wrap"><img class="hero-reference-art" src="images/hero-science-art.jpg" alt="" aria-hidden="true">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <svg class="hero-lab" viewBox="0 0 420 500" aria-hidden="true">
+        <g class="flask">
+          <path class="lab-glass" d="M116 86h44M123 86v100l-42 120a22 22 0 0 0 21 30h76a22 22 0 0 0 21-30l-42-120V86"/>
+          <path class="liquid" d="M92 236h92l22 62H70z"/>
+          <circle class="bubble" cx="112" cy="255" r="4"/><circle class="bubble b2" cx="143" cy="274" r="3"/><circle class="bubble b3" cx="161" cy="249" r="2.5"/>
+        </g>
+        <g class="flask" opacity=".8">
+          <path class="lab-glass" d="M244 52h38M251 52v92l-37 113a20 20 0 0 0 19 27h58a20 20 0 0 0 19-27l-37-113V52"/>
+          <path class="liquid" d="M225 206h76l16 51h-108z"/>
+          <circle class="bubble b2" cx="251" cy="228" r="3"/><circle class="bubble b3" cx="278" cy="242" r="4"/>
+        </g>
+        <path class="lab-glass" d="M320 165h42l-4 180a13 13 0 0 1-13 13h-8a13 13 0 0 1-13-13z" opacity=".6"/>
+      </svg>
+      <svg class="hero-dna" viewBox="0 0 100 180" aria-hidden="true">
+        <path d="M18 10c64 24 64 52 0 76s-64 52 0 84"/>
+        <path d="M82 10c-64 24-64 52 0 76s64 52 0 84"/>
+        <path d="M31 22h38M21 47h58M18 76h64M21 105h58M31 134h38M43 158h14"/>
+        <circle cx="31" cy="22" r="3"/><circle cx="69" cy="134" r="3"/><circle cx="18" cy="76" r="3"/>
+      </svg>
+      <svg class="hero-molecule" viewBox="0 0 300 210" aria-hidden="true">
+        <line x1="55" y1="92" x2="130" y2="48"/><line x1="130" y1="48" x2="216" y2="88"/>
+        <line x1="55" y1="92" x2="92" y2="164"/><line x1="216" y1="88" x2="190" y2="160"/>
+        <line x1="92" y1="164" x2="190" y2="160"/><line x1="130" y1="48" x2="190" y2="160"/>
+        <circle class="atom blue" cx="55" cy="92" r="16"/><circle class="atom green a2" cx="130" cy="48" r="13"/>
+        <circle class="atom blue a3" cx="216" cy="88" r="15"/><circle class="atom white" cx="92" cy="164" r="12"/>
+        <circle class="atom green a2" cx="190" cy="160" r="14"/>
+      </svg>
+      <svg class="hero-leaf" viewBox="0 0 360 250" aria-hidden="true">
+        <defs>
+          <linearGradient id="leafGrad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#197a45"/><stop offset=".55" stop-color="#2ea55f"/><stop offset="1" stop-color="#8ce5a9"/>
+          </linearGradient>
+        </defs>
+        <path d="M28 224C86 186 121 128 162 57c36-61 102-52 166-42-7 74-30 135-87 171-54 34-110 30-185 38z" fill="url(#leafGrad)" opacity=".78"/>
+        <path d="M31 222C116 178 168 126 323 20" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+        <path d="M86 188l-3-43M119 166l-1-54M153 143l5-61M190 116l14-55M226 91l22-39M264 67l25-25" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUICK LINKS ============ -->
+<section class="quick">
+  <div class="wrap">
+    <div class="quick-grid reveal">
+      <a class="quick-card" href="#products">
+        <div class="qi">⬡</div>
+        <h3>Products</h3>
+        <p>Intermediates, salts &amp; industrial chemicals</p>
+      </a>
+      <a class="quick-card" href="#certifications">
+        <div class="qi">✓</div>
+        <h3>Certifications</h3>
+        <p>ISO &amp; FSSAI-backed quality systems</p>
+      </a>
+      <a class="quick-card" href="#clients">
+        <div class="qi">◎</div>
+        <h3>Clients &amp; Partners</h3>
+        <p>Six regions, one supply standard</p>
+      </a>
+      <a class="quick-card" href="#careers">
+        <div class="qi">↗</div>
+        <h3>Careers</h3>
+        <p>Build the next batch with us</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS (ACCORDION) ============ -->
+<section class="section-pad" id="products">
+  <div class="wrap">
+    <div class="eyebrow reveal">Catalog</div>
+    <h2 class="reveal">Featured Products</h2>
+    <p class="section-sub reveal">Four product families manufactured to consistent specification. Search across the complete catalog — relevant products rise to the top as you type.</p>
+    <div class="catalog-filter reveal">
+      <div class="catalog-search-wrap">
+        <span class="catalog-search-icon">⌕</span>
+        <input type="search" id="globalProductSearch" class="catalog-search" placeholder="Search Products" autocomplete="off">
+        <button type="button" id="clearProductSearch" class="catalog-clear" aria-label="Clear product search">×</button>
+      </div>
+      <span class="catalog-match" id="globalProductMatch">All products</span>
+    </div>
+    <div class="accordion reveal" id="productAccordion"></div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS (Certificate of Analysis style) ============ -->
+<section class="section-pad cert-section" id="certifications">
+  <div class="wrap">
+    <div class="eyebrow reveal">Quality System</div>
+    <h2 class="reveal">Certifications</h2>
+    <p class="section-sub reveal">Read the way a lab reads a Certificate of Analysis — every standard we hold, verified and current.</p>
+    <div class="coa reveal">
+      <div class="coa-head">
+        <span>Certificate No. TXP / QA / 2026</span>
+        <span>Status: Active — All Parameters Pending</span>
+      </div>
+      <div class="coa-rows">
+        <div class="coa-row">
+          <div class="coa-badge">9001</div>
+          <h4>Quality Management</h4>
+          <span class="status">ISO 9001</span>
+          <p>Consistent quality management across every batch.</p>
+        </div>
+        <div class="coa-row">
+          <div class="coa-badge">14001</div>
+          <h4>Environmental</h4>
+          <span class="status">ISO 14001</span>
+          <p>Environmental management built into production.</p>
+        </div>
+        <div class="coa-row">
+          <div class="coa-badge">45001</div>
+          <h4>Health &amp; Safety</h4>
+          <span class="status">ISO 45001</span>
+          <p>Occupational health and safety across the facility.</p>
+        </div>
+        <div class="coa-row">
+          <div class="coa-badge">22000</div>
+          <h4>Food Safety Management</h4>
+          <span class="status">ISO 22000</span>
+          <p>Food safety management system for controlled, traceable operations.</p>
+        </div>
+        <div class="coa-row">
+          <div class="coa-badge">FSSAI</div>
+          <h4>Food Safety</h4>
+          <span class="status">FSSAI</span>
+          <p>Food-grade compliance and safety requirements for applicable products.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS & PARTNERS ============ -->
+<section class="section-pad nature-bg" id="clients">
+  <div class="wrap">
+    <div class="eyebrow reveal">Global Presence</div>
+    <h2 class="reveal">Our Global Presence &amp; Partnerships</h2>
+    <p class="section-sub reveal">Connecting innovation across continents with one consistent supply standard.</p>
+    <div class="network-wrap image-network reveal">
+      <div class="network-map-image">
+        <img src="images/global-map.jpg" alt="Taxora Pharma global presence map">
+        <div class="network-map-overlay">
+          <span class="network-pill">North America</span><span class="network-pill">South America</span><span class="network-pill">Europe</span>
+          <span class="network-pill">Middle East</span><span class="network-pill">South &amp; East Asia</span><span class="network-pill">Oceania</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="section-pad nature-bg" id="news">
+  <div class="wrap">
+    <div class="eyebrow reveal">Updates</div>
+    <h2 class="reveal">Latest News &amp; Updates</h2>
+    <p class="section-sub reveal">Stay informed about our progress and milestones.</p>
+    <div class="news-grid">
+      <div class="news-card reveal">
+        <div class="news-thumb t1"><img src="images/news-1.jpg" alt="Laboratory glassware and new product development"></div>
+        <div class="news-body">
+          <span class="news-date">April 5, 2026</span>
+          <h3>New Product Launch</h3>
+          <p>Introducing our latest intermediate for enhanced formulation performance.</p>
+          <a href="#" class="read">Read More →</a>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-thumb t2"><img src="images/news-2.jpg" alt="Strategic partnership and collaboration"></div>
+        <div class="news-body">
+          <span class="news-date">March 22, 2026</span>
+          <h3>Partnership Expansion</h3>
+          <p>Announcing a new strategic distribution partnership in Europe.</p>
+          <a href="#" class="read">Read More →</a>
+        </div>
+      </div>
+      <div class="news-card reveal">
+        <div class="news-thumb t3"><img src="images/news-3.jpg" alt="Research and development achievements"></div>
+        <div class="news-body">
+          <span class="news-date">February 14, 2026</span>
+          <h3>R&amp;D Achievements</h3>
+          <p>A breakthrough milestone reached in our latest research project.</p>
+          <a href="#" class="read">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREERS ============ -->
+<section class="section-pad nature-bg" id="careers">
+  <div class="wrap">
+    <div class="careers reveal">
+      <div>
+        <div class="eyebrow">Careers</div>
+        <h2>Join us in shaping the future of pharmaceuticals.</h2>
+        <p>We're building a team that treats every batch, every certification and every client relationship with the same rigor. If that sounds like you, we'd like to hear from you.</p>
+        <a href="mailto:careers@taxorapharma.com" class="btn btn-navy">Submit Your Resume</a>
+      </div>
+      <div>
+        <div class="careers-visuals">
+          <div class="image-panel"><img src="images/careers-lab.jpg" alt="Pharmaceutical research team in a laboratory"></div>
+          <div class="image-panel"><img src="images/careers-science.jpg" alt="Scientific molecular and pharmaceutical imagery"></div>
+        </div>
+        <div class="career-list">
+          <div class="career-item"><div class="ci">◆</div><div><h4>Innovative Environment</h4><p>Work on real formulation and process challenges.</p></div></div>
+          <div class="career-item"><div class="ci">↑</div><div><h4>Growth Opportunities</h4><p>Clear paths from lab bench to leadership.</p></div></div>
+          <div class="career-item"><div class="ci">⇄</div><div><h4>Team Collaboration</h4><p>Cross-functional teams that ship together.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section-pad contact-section nature-bg" id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Get in Touch</div>
+    <h2 class="reveal">We're here to collaborate and connect.</h2>
+    <p class="section-sub reveal">Send a message and our team will get back to you shortly.</p>
+    <div class="contact-grid reveal">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Full name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="What is this about?">
+        </div>
+        <div class="form-row">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Tell us what you need..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <div class="form-msg" id="formMessage"></div>
+      </form>
+      <div class="contact-side">
+        <div class="map-block"><div class="map-pin"></div></div>
+        <div class="contact-info-card">
+          <div class="info-row">
+            <div class="ii">☎</div>
+            <div><span class="il">Phone : </span><span class="iv">+91 98765 43210<br>+91 9948837555</span></div>
+          </div>
+          <div class="info-row">
+            <div class="ii">✉</div>
+            <div><span class="il">Email</span><span class="iv">: mktg@taxorapharma.com</span></div>
+          </div>
+          <div class="info-row">
+            <div class="ii">⚑</div>
+            <div><span class="il">Address : </span><span class="iv">Flat No. 102, Lakshmi Nivasam, 6th Phase, KPHB, Hyderabad, Telangana, India – 500085</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="images/logo.jpeg" alt="Taxora Pharma logo" style="height:40px;width:40px;">
+          <span class="brand-name" style="color:#fff;">Taxora Pharma</span>
+        </div>
+        <p>Inspired by Nature. Driven by Science. Dedicated to Life.</p>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul class="flinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul class="flinks">
+          <li><a href="#clients">Global Presence</a></li>
+          <li><a href="#news">News &amp; Updates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="flinks">
+          <li><a href="mailto:: mktg@taxorapharma.com">mktg@taxorapharma.com</a></li>
+          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="tel:+919948837555">+91 9948837555</a></li>
+          <li><a href="#">Flat No. 102, Lakshmi Nivasam, 6th Phase, KPHB, Hyderabad, Telangana, India – 500085</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Taxora Pharma. All Rights Reserved.</span>
+      <span>Designed &amp; Developed by Team Taxora Pharma</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav background on scroll
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Contact form handler
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value || 'there';
+    const msg = document.getElementById('formMessage');
+    msg.textContent = 'Thank you, ' + name + '! Your message has been sent.';
+    msg.classList.add('show');
+    this.reset();
+  });
+
+  /* ============ PRODUCTS ACCORDION ============ */
+  const PRODUCT_CATALOG = [
+    {
+      id: 'intermediates',
+      cat: '01 — Intermediates',
+      title: 'Pharmaceutical Intermediates',
+      desc: 'High-purity intermediates engineered for consistent downstream synthesis and regulatory traceability.',
+      icon: '⬡',
+      type: 'intermediate',
+      items: [
+        { name:'7-Methoxy-1-Tetralone', cas:'6836-19-7', api:['Agomelatine'] },
+        { name:'7-Hydroxy-1-Tetralone', cas:'22009-38-7', api:['Velpatasvir'] },
+        { name:'3-Ethoxy-4-Methoxy Benzonitrile', cas:'60758-86-3', api:['Apremilast'] },
+        { name:'3-Methoxy-4-Methyl Benzonitrile', cas:'3556-60-3', api:[] },
+        { name:'3,4-Dihydroxy Benzaldehyde', cas:'139-85-5', api:['Roflumilast','Eliglustat','Piribedil','Droxidopa'] },
+        { name:'Benzophenone Hydrazone', cas:'5350-57-2', api:['Tazobactam','Benzatropine'] },
+        { name:'Oleic Acid', cas:'112-80-1', api:['Calcium Oleate','Sodium Oleate'] },
+        { name:'2,3-Dihydro-1,4-Benzodioxin', cas:'493-09-4', api:['Prosympal','Proroxan','Piperoxan','Imiloxan','Eltoprazine','Domoxin'] },
+        { name:'p-Toluidine', cas:'106-49-0', api:['Phentolamine'] },
+        { name:'P-Toluidine HCl', cas:'540-23-8', api:['Phentolamine'] },
+        { name:'3-Hydroxy-4-Methyldiphenylamine', cas:'61537-49-3', api:['Phentolamine'] },
+        { name:'Ethyl-3,4-Dihydroxy Benzoate', cas:'3943-89-3', api:['Erlotinib'] },
+        { name:'3,4-Dihydroxy Benzoic Acid', cas:'99-50-3', api:['Erlotinib'] },
+        { name:'3-Nitro-4-Chloro Benzene Sulfonamide', cas:'97-09-6', api:['Venetoclax'] },
+        { name:'1,4-Benzodioxane-6-Carboxaldehyde', cas:'29668-44-8', api:['Eliglustat'] },
+        { name:'Octanoyl Chloride', cas:'111-64-8', api:['Eliglustat','Orlistat'] },
+        { name:'3,4-Dihydroxy Benzonitrile', cas:'17345-61-8', api:[] },
+        { name:'4-Chloro-3-Nitrobenzonitrile', cas:'939-80-0', api:['Alectinib','Dabigatran'] },
+        { name:'3-Chloro-N-Methylpropane-1-Amine HCl', cas:'97145-88-5', api:['Chlorpromazine'] },
+        { name:'Formamidine Acetate', cas:'3473-63-0', api:['Itraconazole','Voriconazole','Fluoxydine'] },
+        { name:'O-Toluoyl Chloride', cas:'933-88-0', api:['Tolvaptan'] },
+        { name:'Veratraldehyde', cas:'120-14-9', api:['Donepezil'] },
+        { name:'5,6-Dimethoxy-1-Indanone', cas:'2107-69-9', api:['Donepezil'] },
+        { name:'Pyridine-4-Aldehyde', cas:'872-85-5', api:['Donepezil'] },
+        { name:'N-Benzyl-4-Piperidine Carboxaldehyde', cas:'22065-85-6', api:['Donepezil'] },
+        { name:'N-Methyl Formanilide', cas:'93-61-1', api:['Donepezil'] },
+        { name:'Ethyl Isonicotinate', cas:'1570-45-2', api:['Donepezil'] },
+        { name:'3-Chloropropionyl Chloride', cas:'625-36-5', api:['Donepezil'] },
+        { name:'Piperidine-4-Methanol', cas:'6457-49-4', api:['Donepezil'] },
+        { name:'1-Indanone', cas:'83-33-0', api:['Rasagiline'] },
+        { name:'1-Amino Indan', cas:'34698-41-4', api:['Rasagiline'] },
+        { name:'3-Pyridine Carboxaldehyde', cas:'500-22-1', api:['Indinavir'] },
+        { name:"N,N,N',N'-Tetramethyldiaminomethane", cas:'51-80-9', api:['Ozanimod','Sardomozide'] },
+        { name:'4-Bromo-1-Indanone', cas:'15115-60-3', api:['Ozanimod','Sardomozide'] },
+        { name:'2,3-Dihydro-1-oxo-1H-Indene-4-Carbonitrile', cas:'60899-34-5', api:['Ozanimod','Sardomozide'] },
+        { name:'4-Hydroxy Piperidine', cas:'5382-16-1', api:[] },
+        { name:'Diethyl benzyl Malonate', cas:'607-81-8', api:['Vigabatrin'] },
+        { name:'Benzhydrol Amine', cas:'91-00-9', api:['Azelnidipine'] },
+        { name:'4-Hydroxy Benzyl Alcohol', cas:'623-05-2', api:['Gastrodigenin'] },
+        { name:'4-Methoxyazobenzene', cas:'2396-60-3', api:[] },
+        { name:'6-Chloro-7-deazapurine', cas:'3680-69-1', api:[] },
+        { name:'Dimethylin-Cyanodithioiminocarbonate', cas:'10191-60-3', api:[] }
+      ]
+    },
+    {
+      id: 'mineral-salts',
+      cat: '02 — Salts',
+      title: 'Mineral Salts',
+      desc: 'Refined glycerophosphate mineral salts produced under controlled conditions for pharmaceutical and nutritional use.',
+      icon: '◎',
+      type: 'mineralSalt',
+      items: [
+        { name:'Calcium Glycerophosphate', cas:'27214-00-2', grades:'BPC / EP / BP / NF-X / FCC / USP / DC Grade / Granular / API-Pharma Grade / 50% Solution', applications:['Mineral Supplement','Oral Care','Infant Formula','Animal Health','Food and Beverages'], wc:'Available' },
+        { name:'Magnesium Glycerophosphate', cas:'927-20-8', grades:'BPC / EP / BP / DC Grade / Granular / API-Pharma Grade / 50% Solution', applications:['Mineral Supplement','Dairy Products','Beverages','Oral Health','Treat Heat Burn','Laxative'], wc:'Under Approval' },
+        { name:'Sodium Glycerophosphate', cas:'1334-74-3', grades:'BPC / NF-X / EP / API-Pharma Grade / 50% Solution', applications:['Dietary Supplements','Animal Feed','Food Stabilizer','Neurological'], wc:'Under Filing' },
+        { name:'Manganese Glycerophosphate', cas:'1320-46-3', grades:'NF-X', applications:['Dietary Supplements','Food and Beverages','Animal Health'], wc:'Under Filing' },
+        { name:'Potassium Glycerophosphate', cas:'1319-69-3', grades:'BPC / 40% Powder / 25% Solution / 50% Solution', applications:['Dietary Supplement','Sports Nutrition','Food Additive','Animal Health'], wc:'Under Filing' },
+        { name:'Ferric Glycerophosphate', cas:'1301-70-8', grades:'BPC', applications:['Mineral Nutrition','Food & Beverages'], wc:'Under Filing' },
+        { name:'Copper Glycerophosphate', cas:'85187-41-3', grades:'In-House', applications:['Mineral Supplement','Antiseptic'], wc:'NA' },
+        { name:'Zinc Glycerophosphate', cas:'1300-26-1', grades:'In-House', applications:['Mineral Supplement','Oral Care','Cosmetic Care'], wc:'NA' },
+        { name:'Glycerophosphoric Acid', cas:'57-03-4', grades:'BPC 63 / 25% Solution / 50% Solution', applications:['Human Metabolite','Algal Metabolite','Beverage Additive'], wc:'NA' }
+      ]
+    },
+    {
+      id: 'hypophosphite-salts',
+      cat: '03 — Salts',
+      title: 'Hypophosphite Salts',
+      desc: 'Specialty hypophosphite salts manufactured to tight purity tolerances for sensitive formulations.',
+      icon: '✦',
+      type: 'simpleSalt',
+      items: [
+        { name:'Calcium Hypophosphite', cas:'7789-79-9' },
+        { name:'Magnesium Hypophosphite', cas:'10377-57-8' },
+        { name:'Sodium Hypophosphite', cas:'7681-53-0' },
+        { name:'Manganese Hypophosphite', cas:'10043-84-2' },
+        { name:'Ferric Hypophosphite', cas:'7783-84-8' }
+      ]
+    },
+    {
+      id: 'industrial',
+      cat: '04 — Industrial',
+      title: 'Industrial Chemicals',
+      desc: 'A broader line of industrial chemicals supporting adjacent manufacturing and process needs.',
+      icon: '⌬',
+      type: 'empty',
+      items: []
+    }
+  ];
+
+  function wcClass(wc){
+    if(!wc) return 'wc-na';
+    const v = wc.toLowerCase();
+    if(v.includes('available')) return 'wc-available';
+    if(v.includes('na')) return 'wc-na';
+    return 'wc-pending';
+  }
+
+  function getSearchText(item, type){
+    const base = [
+      item.name || '', item.cas || '',
+      ...(item.api || []), ...(item.applications || []),
+      item.grades || ''
+    ].join(' ');
+    const aliases = {
+      'venetoclax':'cancer oncology leukemia blood cancer',
+      'alectinib':'cancer oncology lung cancer',
+      'apremilast':'psoriasis inflammatory disease',
+      'erlotinib':'cancer oncology lung cancer pancreatic cancer',
+      'doxorubicin':'cancer oncology',
+      'chlorpromazine':'psychiatry',
+      'donepezil':'alzheimers dementia',
+      'rasagiline':'parkinsons',
+      'velpatasvir':'hepatitis c liver disease',
+      'agomelatine':'depression sleep',
+      'orlistat':'weight management obesity',
+      'phentolamine':'hypertension',
+      'ozanimod':'multiple sclerosis inflammatory bowel disease',
+      'dabigatran':'blood thinner anticoagulant',
+      'tazobactam':'antibiotic infection'
+    };
+    const aliasText = Object.entries(aliases)
+      .filter(([key]) => base.toLowerCase().includes(key))
+      .map(([,value]) => value).join(' ');
+    return (base + ' ' + aliasText).toLowerCase();
+  }
+
+  function renderChildCard(item, type){
+    if(type === 'intermediate'){
+      const tags = item.api && item.api.length
+        ? `<div class="tag-row">${item.api.map(a=>`<span class="tag">${a}</span>`).join('')}</div>`
+        : '';
+      return `<div class="child-card" data-search="${getSearchText(item, type)}">
+        <div class="child-card-head"><h4>${item.name}</h4><span class="cas-pill">${item.cas}</span></div>
+        ${tags}
+      </div>`;
+    }
+    if(type === 'mineralSalt'){
+      const tags = item.applications && item.applications.length
+        ? `<div class="tag-row">${item.applications.map(a=>`<span class="tag">${a}</span>`).join('')}</div>`
+        : '';
+      return `<div class="child-card" data-search="${getSearchText(item, type)}">
+        <div class="child-card-head"><h4>${item.name}</h4><span class="cas-pill">${item.cas}</span></div>
+        <div class="salt-row"><span class="salt-label">Grades</span><span>${item.grades}</span></div>
+        ${tags}
+        <span class="wc-badge ${wcClass(item.wc)}">WC — ${item.wc}</span>
+      </div>`;
+    }
+    if(type === 'simpleSalt'){
+      return `<div class="child-card" data-search="${getSearchText(item, type)}">
+        <div class="child-card-head"><h4>${item.name}</h4><span class="cas-pill">${item.cas}</span></div>
+      </div>`;
+    }
+    return '';
+  }
+
+  function renderAccordion(){
+    const root = document.getElementById('productAccordion');
+    root.innerHTML = PRODUCT_CATALOG.map(cat => {
+      const countLabel = cat.type === 'empty' ? 'On request' : `${cat.items.length} products`;
+      let bodyInner;
+      if(cat.type === 'empty'){
+        bodyInner = `<div class="child-grid" style="max-height:none;">
+          <div class="acc-empty-state">
+            <p>Our full industrial chemicals catalog is being finalized for this site. Contact our team for current product availability and specifications.</p>
+            <a href="#contact" class="btn btn-ghost">Request Catalog</a>
+          </div>
+        </div>`;
+      } else {
+        const cards = cat.items.map(it => renderChildCard(it, cat.type)).join('');
+        bodyInner = `
+          <div class="acc-toolbar">
+            <input type="text" class="acc-search" placeholder="Search ${cat.title.toLowerCase()}…" data-target="${cat.id}">
+            <span class="acc-match" data-count-for="${cat.id}">${cat.items.length} of ${cat.items.length} shown</span>
+          </div>
+          <div class="child-grid" id="grid-${cat.id}">${cards}</div>
+        `;
+      }
+      return `
+      <div class="acc-item" data-id="${cat.id}">
+        <button class="acc-header" aria-expanded="false">
+          <div class="acc-icon">${cat.icon}</div>
+          <div class="acc-title-block">
+            <span class="acc-cat">${cat.cat}</span>
+            <h3>${cat.title}</h3>
+            <p class="acc-desc">${cat.desc}</p>
+          </div>
+          <div class="acc-meta">
+            <span class="acc-count">${countLabel}</span>
+            <span class="acc-chevron">⌄</span>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <div class="acc-panel-body">${bodyInner}</div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    // Expand/collapse — single-open accordion
+    window.openAccordionItem = function(id, scroll){
+      const item = root.querySelector(`.acc-item[data-id="${id}"]`);
+      if(!item) return;
+      const wasOpen = item.classList.contains('open');
+      root.querySelectorAll('.acc-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.acc-header').setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){
+        item.classList.add('open');
+        item.querySelector('.acc-header').setAttribute('aria-expanded','true');
+      }
+      if(scroll !== false){
+        setTimeout(() => item.scrollIntoView({behavior:'smooth', block:'start'}), 180);
+      }
+    };
+
+    root.querySelectorAll('.acc-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.closest('.acc-item');
+        window.openAccordionItem(item.dataset.id, item.classList.contains('open') ? false : true);
+      });
+    });
+
+    // Live search per category
+    root.querySelectorAll('.acc-search').forEach(input => {
+      input.addEventListener('click', e => e.stopPropagation());
+      input.addEventListener('input', () => {
+        const id = input.dataset.target;
+        const grid = document.getElementById('grid-' + id);
+        const cards = grid.querySelectorAll('.child-card');
+        const q = input.value.trim().toLowerCase();
+        let visible = 0;
+        cards.forEach(card => {
+          const match = card.dataset.search.includes(q);
+          card.style.display = match ? '' : 'none';
+          if(match) visible++;
+        });
+        const counter = document.querySelector(`[data-count-for="${id}"]`);
+        if(counter) counter.textContent = `${visible} of ${cards.length} shown`;
+        let empty = grid.querySelector('.child-empty');
+        if(visible === 0){
+          if(!empty){
+            empty = document.createElement('div');
+            empty.className = 'child-empty';
+            empty.textContent = 'No products match your search.';
+            grid.appendChild(empty);
+          }
+        } else if(empty){
+          empty.remove();
+        }
+      });
+    });
+  }
+
+
+  /* ============ GLOBAL PRODUCT SEARCH ============ */
+  const globalSearch = document.getElementById('globalProductSearch');
+  const clearGlobalSearch = document.getElementById('clearProductSearch');
+  const globalMatch = document.getElementById('globalProductMatch');
+
+  function applyGlobalProductSearch(){
+    if(!globalSearch) return;
+    const q = globalSearch.value.trim().toLowerCase();
+    const accordion = document.getElementById('productAccordion');
+    const items = Array.from(accordion.querySelectorAll('.acc-item'));
+
+    globalSearch.parentElement.classList.toggle('has-value', !!q);
+
+    let total = 0;
+    let matchingCategories = [];
+
+    items.forEach(acc => {
+      const cards = Array.from(acc.querySelectorAll('.child-card'));
+      const grid = acc.querySelector('.child-grid');
+      const header = acc.querySelector('.acc-header');
+      let matches = 0;
+
+      cards.forEach(card => {
+        const match = !q || card.dataset.search.includes(q);
+        card.style.display = match ? '' : 'none';
+        card.classList.toggle('search-primary', !!q && match);
+        if(match) matches++;
+      });
+
+      // When searching, rank the matching cards before non-matches.
+      if(q && grid){
+        cards.sort((a,b) => {
+          const am = a.style.display !== 'none';
+          const bm = b.style.display !== 'none';
+          return Number(bm) - Number(am);
+        }).forEach(card => grid.appendChild(card));
+      }
+
+      const counter = acc.querySelector('.acc-match');
+      if(counter && q) counter.textContent = `${matches} of ${cards.length} shown`;
+      acc.classList.toggle('search-hit', !!q && matches > 0);
+
+      if(q && matches > 0){
+        total += matches;
+        matchingCategories.push(acc);
+      }
+    });
+
+    if(!q){
+      globalMatch.textContent = 'All products';
+      items.forEach(acc => {
+        acc.classList.remove('search-hit');
+        const counter = acc.querySelector('.acc-match');
+        if(counter){
+          const count = acc.querySelectorAll('.child-card').length;
+          counter.textContent = `${count} of ${count} shown`;
+        }
+      });
+      return;
+    }
+
+    globalMatch.textContent = total ? `${total} matching product${total === 1 ? '' : 's'}` : 'No matches';
+
+    // Bring the category with the most relevant matches to the top.
+    items.sort((a,b) => {
+      const am = a.classList.contains('search-hit') ? a.querySelectorAll('.child-card:not([style*="display: none"])').length : 0;
+      const bm = b.classList.contains('search-hit') ? b.querySelectorAll('.child-card:not([style*="display: none"])').length : 0;
+      return bm - am;
+    }).forEach(acc => accordion.appendChild(acc));
+
+    // Open the strongest result category automatically.
+    if(matchingCategories.length){
+      const first = items.find(acc => acc.classList.contains('search-hit'));
+      items.forEach(acc => {
+        acc.classList.remove('open');
+        acc.querySelector('.acc-header').setAttribute('aria-expanded','false');
+      });
+      first.classList.add('open');
+      first.querySelector('.acc-header').setAttribute('aria-expanded','true');
+    }
+  }
+
+  globalSearch?.addEventListener('input', applyGlobalProductSearch);
+  clearGlobalSearch?.addEventListener('click', () => {
+    globalSearch.value = '';
+    applyGlobalProductSearch();
+    globalSearch.focus();
+  });
+
+  renderAccordion();
+  applyGlobalProductSearch();
+
+  /* ============ NAV MEGA MENU ============ */
+  function renderMegaMenu(){
+    const grid = document.getElementById('megaProductGrid');
+    if(!grid) return;
+    grid.innerHTML = PRODUCT_CATALOG.map(cat => `
+      <button class="mega-item" type="button" data-goto="${cat.id}">
+        <span class="mega-item-icon">${cat.icon}</span>
+        <span class="mega-item-text">
+          <h5>${cat.title}</h5>
+          <p>${cat.desc}</p>
+          <span class="mega-item-count">${cat.type === 'empty' ? 'On request' : cat.items.length + ' products'}</span>
+        </span>
+      </button>
+    `).join('');
+
+    const exploreList = document.getElementById('megaExploreList');
+    const exploreLinks = [
+      { href:'#certifications', label:'Certifications' },
+      { href:'#news', label:'News &amp; Updates' },
+      { href:'#careers', label:'Careers' },
+      { href:'#contact', label:'Contact Us' }
+    ];
+    exploreList.innerHTML = exploreLinks.map(l => `<a href="${l.href}"><span class="dot"></span>${l.label}</a>`).join('');
+
+    const navItem = document.getElementById('megaTrigger');
+    const megaBtn = document.getElementById('megaBtn');
+
+    function closeMega(){
+      navItem.classList.remove('mega-open');
+      megaBtn.setAttribute('aria-expanded','false');
+    }
+    function openMega(){
+      const header = document.getElementById('siteNav');
+      document.getElementById('megaMenu').style.top = (header.offsetHeight) + 'px';
+      navItem.classList.add('mega-open');
+      megaBtn.setAttribute('aria-expanded','true');
+    }
+
+    megaBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navItem.classList.contains('mega-open') ? closeMega() : openMega();
+    });
+
+    document.addEventListener('click', (e) => {
+      if(!navItem.contains(e.target)) closeMega();
+    });
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeMega();
+    });
+
+    grid.querySelectorAll('.mega-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        closeMega();
+        navLinks.classList.remove('open');
+        document.getElementById('products').scrollIntoView({behavior:'smooth', block:'start'});
+        setTimeout(() => window.openAccordionItem(btn.dataset.goto, false), 350);
+      });
+    });
+
+    document.getElementById('megaExploreList').querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => { closeMega(); navLinks.classList.remove('open'); });
+    });
+  }
+
+  renderMegaMenu();
+</script>
+
+</body>
+</html>    
