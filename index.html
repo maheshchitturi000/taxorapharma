@@ -1221,6 +1221,48 @@ header.site-nav.scrolled{
   justify-content:center;
   box-shadow:inset 0 0 0 1px rgba(18,52,93,.08);
 }
+.map-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+.map-link:hover{
+  transform:translateY(-2px);
+  filter:saturate(1.04);
+  box-shadow:0 14px 34px rgba(18,52,91,.14);
+}
+.map-link:focus-visible{
+  outline:3px solid rgba(44,168,102,.35);
+  outline-offset:3px;
+}
+.map-link-label{
+  position:absolute;
+  z-index:3;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%) translateY(4px);
+  background:rgba(255,255,255,.94);
+  color:var(--navy-900);
+  border:1px solid rgba(18,52,91,.10);
+  padding:8px 14px;
+  border-radius:999px;
+  font:600 .72rem var(--font-mono);
+  letter-spacing:.04em;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;
+  box-shadow:0 8px 22px rgba(18,52,91,.12);
+}
+.map-link:hover .map-link-label,
+.map-link:focus-visible .map-link-label{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
 .map-block::after{
   content:"";
   position:absolute;
@@ -1988,9 +2030,17 @@ footer .flinks a:hover{color:var(--green-400);}
 
       <div class="contact-side">
 
-        <div class="map-block">
+        <a
+          class="map-block map-link"
+          href="https://www.google.com/maps/dir/?api=1&destination=Flat%20No.%20102%2C%20Lakshmi%20Nivasam%2C%206th%20Phase%2C%20KPHB%2C%20Hyderabad%2C%20Telangana%2C%20India%20500085"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Get directions to Taxora Pharma in Google Maps"
+          title="Open Taxora Pharma location in Google Maps"
+        >
           <div class="map-pin"></div>
-        </div>
+          <span class="map-link-label">Open in Google Maps</span>
+        </a>
 
         <div class="contact-info-card">
 
@@ -2009,7 +2059,7 @@ footer .flinks a:hover{color:var(--green-400);}
             <div class="ii">✉</div>
             <div>
               <span class="il">Email</span>
-              <span class="iv">info@taxorapharma.com</span>
+              <span class="iv">mktg@taxorapharma.com</span>
             </div>
           </div>
 
