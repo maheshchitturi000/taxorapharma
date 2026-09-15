@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taxora Pharma — Intermediates, Specialty Chemicals & Quality</title>
-<meta name="description" content="Taxora Pharma manufactures pharmaceutical intermediates, mineral salts, hypophosphite salts and industrial chemicals with ISO and FSSAI-backed quality systems.">
+<title>Taxora Pharma — Pharmaceutical Products, Specialty Chemicals & Quality</title>
+<meta name="description" content="Taxora Pharma manufactures pharmaceutical products, mineral salts, hypophosphite salts and industrial chemicals with ISO and FSSAI-backed quality systems.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -180,7 +180,7 @@ header.site-nav.scrolled{
 .brand-name{
   font-family:var(--font-display);
   font-weight:700;
-  font-size:1.65rem;
+  font-size:1.9rem;
   line-height:1;
   color:var(--navy-900);
   letter-spacing:-.025em;
@@ -436,7 +436,7 @@ header.site-nav.scrolled{
 }
 .hero h1{
   color:var(--navy-900);
-  font-size:clamp(2.35rem,4.2vw,3.55rem);
+  font-size:clamp(2.05rem,3.55vw,3.05rem);
   line-height:1.06;
   letter-spacing:-.025em;
   margin-bottom:24px;
@@ -597,6 +597,8 @@ header.site-nav.scrolled{
 
 .mol-label{
   position:absolute;
+  display:block;
+  text-decoration:none;
   font-family:var(--font-mono);
   font-size:.63rem;
   color:var(--navy-800);
@@ -609,7 +611,70 @@ header.site-nav.scrolled{
   border-radius:999px;
   backdrop-filter:blur(6px);
 }
-.mol-label.l1{top:5%;left:3%;}
+/* Animated brand motto: positioned beside the lower-right campaign message.
+   The angled-bracket frame stays fixed while only the slogan travels inside it. */
+.hero-motto-track{
+  position:absolute;
+  left:5%;
+  right:23%;
+  bottom:7%;
+  height:42px;
+  overflow:hidden;
+  z-index:8;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  padding:0 34px;
+  border:none;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.hero-motto-track::before,
+.hero-motto-track::after{
+  position:absolute;
+  top:50%;
+  transform:translateY(-52%);
+  font-family:var(--font-mono);
+  font-size:1.15rem;
+  font-weight:500;
+  line-height:1;
+  color:rgba(255,255,255,.95);
+  text-shadow:0 1px 5px rgba(0,35,30,.28);
+  z-index:3;
+  pointer-events:none;
+}
+.hero-motto-track::before{content:'<';left:13px;}
+.hero-motto-track::after{content:'>';right:13px;}
+.hero-motto-track::after{
+  text-shadow:0 1px 5px rgba(0,35,30,.28);
+}
+.hero-motto{
+  display:block;
+  width:max-content;
+  max-width:none;
+  pointer-events:auto;
+  white-space:nowrap;
+  font-family:var(--font-mono);
+  font-size:clamp(.48rem,.65vw,.62rem);
+  line-height:1;
+  letter-spacing:.045em;
+  text-transform:none;
+  text-decoration:none;
+  color:#fff;
+  padding:0;
+  animation:mottoSlideRight 8s cubic-bezier(.45,0,.2,1) infinite;
+  will-change:transform,opacity;
+}
+@keyframes mottoSlideRight{
+  0%{transform:translateX(-115%);opacity:0}
+  10%{transform:translateX(-88%);opacity:1}
+  58%{transform:translateX(-8%);opacity:1}
+  72%{transform:translateX(8%);opacity:.65}
+  80%,100%{transform:translateX(24%);opacity:0}
+}
+.hero-motto:hover{animation-play-state:paused;}
 .mol-label.l2{bottom:5%;right:3%;}
 
 /* ============================================================
@@ -1379,7 +1444,7 @@ footer .flinks a:hover{color:var(--green-400);}
   .hero-inner{grid-template-columns:1fr;gap:20px;}
   .hero-copy{order:2;}
   .molecule-wrap{order:1;height:430px;}
-  .hero h1{font-size:clamp(2.5rem,7vw,3.6rem);}
+  .hero h1{font-size:clamp(2.3rem,6vw,3.15rem);}
   .coa-rows{grid-template-columns:repeat(3,1fr);}
   .coa-row:nth-child(3n){border-right:none;}
   .child-grid{grid-template-columns:repeat(2,1fr);}
@@ -1464,7 +1529,7 @@ footer .flinks a:hover{color:var(--green-400);}
   .wrap{padding:0 20px;}
   .nav-inner{padding:10px 20px;}
   .brand img{height:44px;width:44px;}
-  .brand-name{font-size:1.4rem;}
+  .brand-name{font-size:1.55rem;}
   .brand-tag{font-size:.52rem;max-width:250px;}
   .hero{padding:110px 0 70px;}
   .hero-inner{padding:0 20px;}
@@ -1482,15 +1547,28 @@ footer .flinks a:hover{color:var(--green-400);}
 
 @media(max-width:560px){
   .section-pad{padding:56px 0;}
-  .brand-name{font-size:1.25rem;}
+  .brand-name{font-size:1.38rem;}
   .brand-tag{font-size:.47rem;max-width:220px;}
-  .hero h1{font-size:clamp(2.25rem,11vw,3.1rem);}
+  .hero h1{font-size:clamp(2rem,9.5vw,2.75rem);}
   .hero p.lede{font-size:1rem;}
   .hero-actions .btn{width:100%;}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
   .molecule-wrap{height:300px;}
   .hero-dna{width:25%;height:35%;}
   .hero-molecule{width:44%;}
+  .hero-motto-track{
+    left:4%;
+    right:22%;
+    bottom:6%;
+    height:34px;
+    padding:0 28px;
+  }
+  .hero-motto-track::before{left:10px;font-size:1rem;}
+  .hero-motto-track::after{right:10px;font-size:1rem;}
+  .hero-motto{
+    font-size:.46rem;
+    letter-spacing:.035em;
+  }
   .quick-grid{grid-template-columns:1fr;}
   .child-grid{grid-template-columns:1fr;max-height:440px;}
   .acc-header{padding:20px;gap:14px;}
@@ -1516,6 +1594,29 @@ footer .flinks a:hover{color:var(--green-400);}
     animation-duration:.01ms!important;
     animation-iteration-count:1!important;
     transition-duration:.01ms!important;
+  }
+}
+@media(max-width:380px){
+  .hero-motto-track{
+    left:3%;
+    right:20%;
+    bottom:5%;
+    height:30px;
+    padding:0 24px;
+  }
+  .hero-motto-track::before{left:8px;font-size:.9rem;}
+  .hero-motto-track::after{right:8px;font-size:.9rem;}
+  .hero-motto{
+    font-size:.40rem;
+    letter-spacing:.025em;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-motto{
+    animation:none;
+    opacity:1;
+    transform:none;
   }
 }
 </style>
@@ -1600,13 +1701,13 @@ footer .flinks a:hover{color:var(--green-400);}
       </div>
 
       <h1>
-        Innovating <em>intermediates</em>,<br>
+        Innovating <em>Pharmaceutical Products</em>,<br>
         <a class="hero-specialty" href="#products">Specialty Chemicals</a><br>
         and delivering quality.
       </h1>
 
       <p class="lede">
-        Taxora Pharma manufactures pharmaceutical intermediates, specialty chemicals,
+        Taxora Pharma manufactures pharmaceutical products, specialty chemicals,
         mineral salts, hypophosphite salts and industrial chemicals — inspected batch
         by batch, certified end to end.
       </p>
@@ -1640,7 +1741,7 @@ footer .flinks a:hover{color:var(--green-400);}
 
        <img
         class="hero-scientist"
-        src="images/indian-scientist-lab.png"
+        src="images/indian-scientist-lab-girl.png"
         alt="Indian scientist working in a pharmaceutical laboratory"
         onerror="this.style.display='none';this.nextElementSibling.classList.add('fallback-visible');"
       >
@@ -1653,8 +1754,9 @@ footer .flinks a:hover{color:var(--green-400);}
         <div class="fallback-text">Science · Quality · Life</div>
       </div>
 
-      <span class="mol-label l1">SCIENCE · QUALITY · LIFE</span>
-      
+      <div class="hero-motto-track" aria-label="Inspired by Nature · Driven by Science · Dedicated to Life">
+      </div>
+
 
       <div class="hero-orbit" aria-hidden="true"></div>
 
@@ -1696,7 +1798,7 @@ footer .flinks a:hover{color:var(--green-400);}
       <a class="quick-card" href="#products">
         <div class="qi">⬡</div>
         <h3>Products</h3>
-        <p>Intermediates, salts &amp; industrial chemicals</p>
+        <p>Pharmaceutical products, salts &amp; industrial chemicals</p>
       </a>
 
       <a class="quick-card" href="#certifications">
@@ -1742,7 +1844,7 @@ footer .flinks a:hover{color:var(--green-400);}
           type="search"
           id="globalProductSearch"
           class="catalog-search"
-          placeholder="Search products, CAS numbers, APIs, applications or terms like “cancer”…"
+          placeholder="Search products"
           autocomplete="off"
         >
         <button
@@ -1885,7 +1987,7 @@ footer .flinks a:hover{color:var(--green-400);}
         <div class="news-body">
           <span class="news-date">April 5, 2026</span>
           <h3>New Product Launch</h3>
-          <p>Introducing our latest intermediate for enhanced formulation performance.</p>
+          <p>Introducing our latest pharmaceutical product for enhanced formulation performance.</p>
           <a href="#" class="read">Read More →</a>
         </div>
       </div>
@@ -2227,12 +2329,12 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
 
 const PRODUCT_CATALOG = [
   {
-    id:'intermediates',
-    cat:'01 — Intermediates',
-    title:'Pharmaceutical Intermediates',
-    desc:'High-purity intermediates engineered for consistent downstream synthesis and regulatory traceability.',
+    id:'pharmaceutical-products',
+    cat:'01 — Pharmaceutical Products',
+    title:'Pharmaceutical Products',
+    desc:'High-purity pharmaceutical products developed for consistent quality, application performance and regulatory traceability.',
     icon:'⬡',
-    type:'intermediate',
+    type:'pharmaceuticalProduct',
     items:[
       {name:'7-Methoxy-1-Tetralone',cas:'6836-19-7',api:['Agomelatine']},
       {name:'7-Hydroxy-1-Tetralone',cas:'22009-38-7',api:['Velpatasvir']},
@@ -2275,7 +2377,37 @@ const PRODUCT_CATALOG = [
       {name:'4-Hydroxy Benzyl Alcohol',cas:'623-05-2',api:['Gastrodigenin']},
       {name:'4-Methoxyazobenzene',cas:'2396-60-3',api:[]},
       {name:'6-Chloro-7-deazapurine',cas:'3680-69-1',api:[]},
-      {name:'Dimethylin-Cyanodithioiminocarbonate',cas:'10191-60-3',api:[]}
+      {name:'Dimethylin-Cyanodithioiminocarbonate',cas:'10191-60-3',api:[]},
+      {name:'Cystenamine HCL',cas:'156-57-0',api:[]},
+      {name:'Dimethyl Cyano Dithioimino Carbonate',cas:'10191-6-3',api:[]},
+      {name:'Maglumine',cas:'6284-40-8',api:['Contrast agents']},
+      {name:'Polyethylene Glycol',cas:'25322-88-3',api:['Laxatives / Excipients']},
+      {name:'Methyl Oleate',cas:'112-62-9',api:[]},
+      {name:'Tetrahydro-2-Furoic Acid',cas:'16874-33-2',api:['Alfuzosin','Faropenem']},
+      {name:'N-Benzyl Glycine Ethyl Ester',cas:'6436-90-4',api:['Suvorexant']},
+      {name:'2-[(Diphenylmethyl) Thio] Acetic Acid',cas:'62547-22-8',api:['Modafinil']},
+      {name:'2-[(Diphenylmethyl) Sulfinyl] Acetic Acid',cas:'68524-30-1',api:['Modafinil']},
+      {name:'2,3:4,5-Bis-O-(1-Methylethylidene)-β-D-Fructopyranose',cas:'20880-92-6',api:['Topiramate']},
+      {name:'Bis-O-(Methylethylidene)-β-Fructopyranose Azido Sulphat',cas:'106831-35-4',api:['Topiramate']},
+      {name:'Meldrum’s Acid',cas:'2033-24-1',api:['Sitagliptin','Amenamevir','Atogepant']},
+      {name:'Oxazolidinone derivative',cas:'189028-93-1',api:['Ezetimibe']},
+      {name:'4-Fluorophenyl Amino Phenol',cas:'3382-63-6',api:['Ezetimibe']},
+      {name:'Benzyloxy Benzylidene Fluoro Aniline',cas:'70627-52-0',api:['Ezetimibe']},
+      {name:'Palmitoyl Chloride',cas:'112-67-4',api:['Clindamycin']},
+      {name:'Palmitic Acid',cas:'57-10-3',api:['Clindamycin']},
+      {name:'Cinnamoyl Chloride',cas:'17082-09-6',api:['Sofosbuvir']},
+      {name:'D-Tryptophan Methyl Ester Hydrochloride',cas:'14907-27-8',api:['Tadalafil']},
+      {name:'2,6-Dimethyl Phenoxy Acetic Acid',cas:'13335-71-2',api:['Lopinavir']},
+      {name:'(2,6-Dimethylphenoxy) Acetyl Chloride',cas:'20143-48-0',api:['Lopinavir']},
+      {name:'4-(Benzyloxy)-2-Bromo Propiophenone',cas:'35081-45-9',api:['Bazedoxifene']},
+      {name:'4-Benzyloxy Aniline Hydrochloride',cas:'51383-20-6',api:['Bazedoxifene']},
+      {name:'N-Octanoyl Benzotriazole',cas:'58068-80-7',api:['Orlistat']},
+      {name:'4-Chloro Phenyl Dicyandiamide',cas:'1482-62-8',api:['Proguanil']},
+      {name:'p-Toluoyl Chloride',cas:'874-60-2',api:['Tolmetin']},
+      {name:'Dimethyl 2-(2-Methoxyphenoxy) Malonate',cas:'150726-89-9',api:['Bosentan']},
+      {name:'4,6-Dichloro-5-(2-Methoxyphenoxy)-2,2-Bipyrimidine',cas:'150728-13-5',api:['Bosentan']},
+      {name:'4-(Tertiary Butyl) Benzene-1-Sulfonamide',cas:'6292-59-7',api:['Bosentan']},
+      {name:'Cinnamyl Chloride',cas:'2687-12-9',api:['Cinnarizine','Aripiprazole']}
     ]
   },
   {
@@ -2378,7 +2510,7 @@ function escapeHtml(value){
 }
 
 function renderChildCard(item,type){
-  if(type === 'intermediate'){
+  if(type === 'pharmaceuticalProduct'){
     const tags = item.api && item.api.length
       ? `<div class="tag-row">${item.api.map(a => `<span class="tag">${escapeHtml(a)}</span>`).join('')}</div>`
       : '';
